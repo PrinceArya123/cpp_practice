@@ -27,6 +27,8 @@ int main() {
         }
         cout<<endl;
     }
+    int c[5][5];
+    
      
     return 0;
 }

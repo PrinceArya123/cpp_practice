@@ -1,16 +1,18 @@
 #include<iostream>
 #include<vector>
 using namespace std;
+
 vector<vector<int>>create_spiral_matrix(int n){
     vector<vector<int>>matrix(n,vector<int>(n));
-
     int left=0;
     int right=n-1;
     int top=0;
     int bottom=n-1;
+
     int direction=0;
     int value=1;
-    while(left<=right&&top<=bottom){
+    while(left<=right && top<=bottom){
+
         if(direction==0){
             for(int i=left;i<=right;i++){
                 matrix[top][i]=value++;
@@ -30,19 +32,21 @@ vector<vector<int>>create_spiral_matrix(int n){
             bottom--;
         }
         else{
-            for(int j=bottom;j>=top;j--){
+            for(int j=bottom;j>=top;j-- ){
                 matrix[j][left]=value++;
             }
             left++;
         }
         direction=(direction+1)%4;
+        
     }
     return matrix;
 }
 int main(){
     int n;
-     cin>>n;
+    cin>>n;
     vector<vector<int>>matrix(n,vector<int>(n));
+
     matrix=create_spiral_matrix(n);
     for(int i=0;i<n;i++){
         for(int j=0;j<n;j++){
@@ -52,4 +56,3 @@ int main(){
     }
     return 0;
 }
- 
